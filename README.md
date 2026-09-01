@@ -1,1 +1,1 @@
-![GitHub Contribution Snake](https://githubusercontent.com)
+![GitHub Snake Ocean](https://githubusercontent.com)
