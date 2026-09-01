@@ -1,12 +1,12 @@
-name: Generate Snake
+name: Generate Snake Game
 
 on:
-  # Tự động chạy mỗi 24 giờ
+  # Tự động chạy mỗi ngày vào lúc 00:00 UTC
   schedule:
     - cron: "0 0 * * *"
-  # Cho phép bạn bấm chạy thủ công bằng nút "Run workflow"
+  # Cho phép bạn chủ động bấm chạy thủ công bằng nút "Run workflow"
   workflow_dispatch:
-  # Tự động chạy mỗi khi bạn cập nhật code nhánh main
+  # Tự động chạy khi bạn thay đổi code ở nhánh main
   push:
     branches:
     - main
@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 5
     
     steps:
-      # Bước sử dụng đoạn code của bạn để tạo ra các file ảnh snake
+      # Bước tạo file ảnh động chuẩn theo cấu hình tài liệu bạn gửi
       - uses: Platane/snk@v3
         with:
           github_user_name: tan-thien
@@ -28,7 +28,7 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9&color_background=#aaaaaa
 
-      # Bước bắt buộc: Đẩy các file ảnh đã tạo ở trên lên nhánh "output" để hiển thị
+      # Bước đẩy 3 file ảnh trên (github-snake.svg, github-snake-dark.svg, ocean.gif) lên nhánh output
       - name: push files to the output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
