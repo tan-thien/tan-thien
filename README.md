@@ -1,8 +1,19 @@
 <picture>
-  <!-- Bản Tối (Dark mode) -->
-  <source media="(prefers-color-scheme: dark)" srcset="https://githubusercontent.com" />
-  <!-- Bản Sáng (Light mode) -->
-  <source media="(prefers-color-scheme: light)" srcset="https://githubusercontent.com" />
-  <!-- Bản dự phòng mặc định -->
-  <img alt="github-snake" src="https://githubusercontent.com" />
+  <!-- Dark mode -->
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://raw.githubusercontent.com/tan-thien/tan-thien/output/github-snake-dark.svg"
+  />
+
+  <!-- Light mode -->
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://raw.githubusercontent.com/tan-thien/tan-thien/output/github-snake.svg"
+  />
+
+  <!-- Fallback -->
+  <img
+    alt="github-snake"
+    src="https://raw.githubusercontent.com/tan-thien/tan-thien/output/github-snake.svg"
+  />
 </picture>
